@@ -1,3 +1,14 @@
+:root {
+  --background-primary: #eeeeee;
+  --background-secondary: #cccccc;
+  --background-dark: #1f1f1f;
+  --color-primary: #1e1e1e;
+  --color-dark: #ededed;
+  --color-flash-background: #e42f2f;
+  --color-next-background: #3873a3;
+  --color-accent-light: #2196f3;
+}
+
 body {
   width: 100vw;
   min-height: 100vh;
@@ -6,6 +17,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: var(--color-primary);
+  padding: 12px;
 }
 
 .transmitting-container {
@@ -14,8 +27,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
-  width: 50%;
+  height: 75%;
+  width: 75%;
   gap: 12px;
 }
 
@@ -26,7 +39,7 @@ body {
 }
 
 h1 {
-  font-size: 5vw;
+  font-size: 7vw;
   margin: 0px;
   font-family: "Times New Roman", Times, serif;
 }
@@ -35,7 +48,7 @@ h1 {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  min-width: 60px;
   height: 34px;
   margin: 0px;
 }
@@ -56,7 +69,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--background-secondary);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   margin: 0px;
@@ -69,17 +82,17 @@ h1 {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--background-primary);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--color-accent-light);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--color-accent-light);
 }
 
 input:checked + .slider:before {
@@ -98,18 +111,21 @@ input:checked + .slider:before {
 }
 
 .dark-mode {
-  background-color: #1e1e1e;
-  color: #eeeeee;
+  transition-duration: 0.1s;
+  background-color: var(--background-dark);
+  color: var(--color-dark);
 }
 
 .flash {
-  background-color: #ff0000;
-  color: #eeeeee;
+  transition-duration: 0.1s;
+  background-color: var(--color-flash-background);
+  color: var(--color-dark);
 }
 
 .next {
-  background-color: #0015ff;
-  color: #eeeeee;
+  transition-duration: 0.1s;
+  background-color: var(--color-next-background);
+  color: var(--color-dark);
 }
 
 svg {
