@@ -4,19 +4,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Signal Transmitting</title>
   </head>
   <body>
-    <button onclick="light(false)">Light (Off) (0)</button>
-    <button onclick="light(true)">Light (On) (1)</button>
-    <button onclick="turnRed()">Next</button>
-    <button>
-      <a href="https://szynalski.com/tone#600,v0.75">Sound (0)</a>
-    </button>
-    <button>
-      <a href="https://szynalski.com/tone#1000,v0.75">Sound (1)</a>
-    </button>
+    <div class="buttonList">
+      <h1>Signal Transmitting</h1>
+      <br />
+
+      <!-- Visuals -->
+      <div class="buttonList horizontalButtonList">
+        <!-- The Checkbox -->
+        <label class="switch" for="checkbox">
+          <input
+            type="checkbox"
+            id="checkbox"
+            onclick="changeBackgroundColor()"
+          />
+          <span class="slider round"></span>
+        </label>
+
+        <!-- The Flash Screen Button -->
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          onclick="flashScreen()"
+        >
+          Flash
+        </button>
+      </div>
+      <br />
+      <!-- The Frequency Buttons (Audio) -->
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="playTone(600, 1000)"
+        >
+          600 Hz
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="playTone(1000, 1000)"
+        >
+          1000 Hz
+        </button>
+      </div>
+      <br />
+      <span>
+        <b>Light: </b>Switch the screen to black for 0 and white for 1, then,
+        press flash to activate that signal.
+      </span>
+      <span> <b>Audio: </b>Press 600 Hz for a 0 and 1000 Hz for a 1. </span>
+    </div>
+
+    <!-- Import Bootstrap and Javascript File -->
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
