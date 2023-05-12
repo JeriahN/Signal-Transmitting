@@ -1,8 +1,9 @@
 const checkbox = document.getElementById("checkbox"); // The checkbox
-const audioContext = new (window.AudioContext || window.AudioContext)(); // The audio context
+const audioContext = new (window.AudioContext || window.webkitAudioContext)(); // The audio context
 const gainNode = audioContext.createGain(); // The gain node
 const FLASH_DURATION = 1000;
 const FLASH_CLASS_NAME = "flash";
+const NEXT_CLASS_NAME = "next";
 
 // Connect the gain node to the audio context's destination
 gainNode.connect(audioContext.destination);
@@ -28,6 +29,11 @@ function addClassWithTimeout(element, className, timeout) {
 // Flash the screen for 1 second
 function flashScreen() {
   addClassWithTimeout(document.body, FLASH_CLASS_NAME, FLASH_DURATION);
+}
+
+// Flash the screen for 1 second
+function nextScreen() {
+  addClassWithTimeout(document.body, NEXT_CLASS_NAME, FLASH_DURATION);
 }
 
 // Play a tone at the specified frequency for the specified duration

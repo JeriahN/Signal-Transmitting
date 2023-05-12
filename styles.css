@@ -103,7 +103,12 @@ input:checked + .slider:before {
 }
 
 .flash {
-  background-color: red;
+  background-color: #ff0000;
+  color: #eeeeee;
+}
+
+.next {
+  background-color: #0015ff;
   color: #eeeeee;
 }
 
