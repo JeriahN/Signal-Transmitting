@@ -1,9 +1,16 @@
 const checkbox = document.getElementById("checkbox"); // The checkbox
+const frequencySlider = document.getElementById("frequencySlider"); // The frequency slider
+const frequencyValue = document.getElementById("frequencyValue");
+const playButton = document.getElementById("playButton"); // The play button
+
 const audioContext = new (window.AudioContext || window.webkitAudioContext)(); // The audio context
 const gainNode = audioContext.createGain(); // The gain node
 const FLASH_DURATION = 1000;
 const FLASH_CLASS_NAME = "flash";
 const NEXT_CLASS_NAME = "next";
+
+let frequency = frequencySlider.value;
+const duration = 1000; // You can change the duration as needed
 
 // Connect the gain node to the audio context's destination
 gainNode.connect(audioContext.destination);
@@ -53,3 +60,15 @@ function playTone(frequency, duration) {
     oscillator.stop();
   }, duration);
 }
+
+// Update text to match slider
+frequencySlider.addEventListener("input", () => {
+  frequencyValue.textContent = frequencySlider.value;
+});
+
+// Event listener for the play button
+playButton.addEventListener("click", () => {
+  frequency = frequencySlider.value;
+
+  playTone(frequency, duration);
+});
